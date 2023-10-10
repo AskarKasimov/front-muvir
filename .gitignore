@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/muvir/node_modules
+/muvir/.pnp
+/muvir/.pnp.js
+
+# testing
+/muvir//coverage
+
+# production
+/muvir//build
+
+# misc
+/muvir/.DS_Store
+/muvir/.env.local
+/muvir/.env.development.local
+/muvir/.env.test.local
+/muvir/.env.production.local
+
+/muvir/npm-debug.log*
+/muvir/yarn-debug.log*
+/muvir/yarn-error.log*
