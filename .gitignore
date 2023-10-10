@@ -6,10 +6,10 @@
 /muvir/.pnp.js
 
 # testing
-/muvir//coverage
+/muvir/coverage
 
 # production
-/muvir//build
+/muvir/build
 
 # misc
 /muvir/.DS_Store
