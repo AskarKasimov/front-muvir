@@ -45,6 +45,8 @@
 
 
         & li {
+            list-style-type: none;
+
             & a {
                 display: block;
                 position: relative;
@@ -90,6 +92,7 @@
         gap: 10px;
 
         & li {
+            list-style-type: none;
             display: flex;
             flex-direction: row;
             gap: 5px;

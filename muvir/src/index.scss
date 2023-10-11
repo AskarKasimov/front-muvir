@@ -30,10 +30,6 @@ a {
     color: inherit;
 }
 
-li {
-    list-style-type: none;
-}
-
 .slick-dots {
     bottom: 25px !important;
 }
@@ -45,6 +41,10 @@ li {
 
 .slick-dots li button:before {
     color: #FFFFFF !important;
+}
+
+.news-slider .slick-list {
+    border-radius: 35px;
 }
 
 .card {
@@ -101,6 +101,7 @@ li {
     gap: 50px;
     font-size: 32px;
     color: #FFFFFF;
+    list-style-type: none;
 
     & a {
         display: block;
@@ -219,7 +220,7 @@ li {
     .navbar .menu-items {
         padding-top: 50px;
         background: #fff;
-        height: 10000000000svh;
+        height: 100vh;
         min-width: 110vw;
         padding-right: 6vw;
         transform: translate(-150%);

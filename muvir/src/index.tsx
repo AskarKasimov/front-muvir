@@ -9,6 +9,7 @@ import App from './App';
 import MainPage from './MainPage/MainPage';
 import NewsPage from './NewsPage/NewsPage';
 import NewsItem from './NewsItem/NewsItem';
+import AdminPage from './AdminPage/AdminPage';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                 element: <NewsItem />
             }
         ]
+    },
+    {
+        path: "admin",
+        element: <AdminPage />
     }
 ]);
 
