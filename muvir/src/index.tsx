@@ -8,8 +8,22 @@ import "./index.scss";
 import App from './App';
 import MainPage from './MainPage/MainPage';
 import NewsPage from './NewsPage/NewsPage';
-import NewsItem from './NewsItem/NewsItem';
 import AdminPage from './AdminPage/AdminPage';
+import SingleNews from './SingleNews/SingleNews';
+import EventsPage from './EventsPage/EventsPage';
+import SingleEvent from './SingleEvent/SingleEvent';
+import SingleRest from './SingleRest/SingleRest';
+import RestPage from './RestPage/RestPage';
+import ProductsPage from './ProductsPage/ProductsPage';
+import InvestPage from './InvestPage/InvestPage';
+import Panel from './AdminPage/Panel/Panel';
+import Login from './AdminPage/Login/Login';
+import EditNewsPage from './AdminPage/EditNewsPage';
+import EditMainPage from './AdminPage/EditMainPage';
+import EditEventsPage from './AdminPage/EditEventsPage';
+import EditProductsPage from './AdminPage/EditProductsPage';
+import EditRestPage from './AdminPage/EditRestPage';
+import EditInvestPage from './AdminPage/EditInvestPage';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -30,13 +44,71 @@ const router = createBrowserRouter([
             },
             {
                 path: "news/:newsID",
-                element: <NewsItem />
+                element: <SingleNews />
+            },
+            {
+                path: "events",
+                element: <EventsPage />
+            },
+            {
+                path: "events/:eventID",
+                element: <SingleEvent />
+            },
+            {
+                path: "rest",
+                element: <RestPage />
+            },
+            {
+                path: "rest/:restID",
+                element: <SingleRest />
+            },
+            {
+                path: "products",
+                element: <ProductsPage />
+            },
+            {
+                path: "invest",
+                element: <InvestPage />
             }
         ]
     },
     {
         path: "admin",
-        element: <AdminPage />
+        element: <AdminPage />,
+        children: [
+            {
+                index: true,
+                element: <Panel />
+            },
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "news",
+                element: <EditNewsPage />
+            },
+            {
+                path: "main",
+                element: <EditMainPage />
+            },
+            {
+                path: "events",
+                element: <EditEventsPage />
+            },
+            {
+                path: "products",
+                element: <EditProductsPage />
+            },
+            {
+                path: "rest",
+                element: <EditRestPage />
+            },
+            {
+                path: "invest",
+                element: <EditInvestPage />
+            }
+        ]
     }
 ]);
 

@@ -1,13 +1,10 @@
 import { useParams } from "react-router-dom";
-import style from "./NewsItem.module.scss";
+import style from "./SingleNews.module.scss";
 import Slider from "react-slick";
-import ReactMarkdown from "react-markdown";
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import remarkGfm from 'remark-gfm';
-import Markdown from "react-markdown";
 
-const NewsItem = () => {
+const SingleNews = () => {
     const newsID = useParams().newsID;
     const [md, setMD] = useState<string>();
     return (
@@ -36,13 +33,15 @@ const NewsItem = () => {
                         <div style={{ backgroundImage: "url('/4.png')" }}></div>
                     </div>
                 </Slider>
-                <MDEditor height={500} value={md} onChange={setMD} />
-                <div>
-                    <Markdown remarkPlugins={[remarkGfm]}>{md}</Markdown>
+                {/* <div data-color-mode="light">
+                    <MDEditor visibleDragbar={false} height={500} value={md} onChange={setMD} />
+                </div> */}
+                <div data-color-mode="light">
+                    <MDEditor.Markdown source={md} />
                 </div>
             </div>
         </div>
     );
 }
 
-export default NewsItem
+export default SingleNews;
