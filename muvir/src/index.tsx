@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import "./index.scss";
 
 import App from './App';
+import MainPage from './MainPage/MainPage';
+import NewsPage from './NewsPage/NewsPage';
+import NewsItem from './NewsItem/NewsItem';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -15,6 +18,20 @@ const router = createBrowserRouter([
     {
         path: "",
         element: <App />,
+        children: [
+            {
+                index: true,
+                element: <MainPage />
+            },
+            {
+                path: "news",
+                element: <NewsPage />
+            },
+            {
+                path: "news/:newsID",
+                element: <NewsItem />
+            }
+        ]
     }
 ]);
 

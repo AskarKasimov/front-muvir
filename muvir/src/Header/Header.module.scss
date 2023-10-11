@@ -1,0 +1,77 @@
+.Header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 130px;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color .2s, height .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // padding-left: 100px;
+    // padding-right: 100px;
+    max-width: 1800px;
+}
+
+.navigate {
+    font-weight: 700;
+    font-size: 64px;
+    padding: 0 10px 0 10px;
+    color: #FFFFFF;
+    // transition: color .2s;
+
+    // &:hover {
+    //     color: #EE0000;
+    // }
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 50px;
+    font-size: 32px;
+    color: #FFFFFF;
+
+    & a {
+        display: block;
+        position: relative;
+        padding: 0.2em 0;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1em;
+            background-color: #FFFFFF;
+            opacity: 1;
+            transform: translate3d(-100%, 0, 0);
+            transition: opacity .3s, transform .3s;
+        }
+
+        &:hover::after {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .Header {
+        height: auto;
+        padding-bottom: 12px;
+        background-color: #91D609 !important;
+    }
+}
