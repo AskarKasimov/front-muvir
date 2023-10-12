@@ -3,10 +3,11 @@ import style from "./SingleNews.module.scss";
 import Slider from "react-slick";
 import { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
+import { useGetEventByIDQuery } from "../store/API/muvir.api";
 
 const SingleNews = () => {
     const newsID = useParams().newsID;
-    const [md, setMD] = useState<string>();
+    // const {data, isSuccess, isLoading} = useGetEventByIDQuery(newsID);
     return (
         <div className={style.container}>
             <div className={style.content}>
@@ -37,7 +38,7 @@ const SingleNews = () => {
                     <MDEditor visibleDragbar={false} height={500} value={md} onChange={setMD} />
                 </div> */}
                 <div data-color-mode="light">
-                    <MDEditor.Markdown source={md} />
+                    {/* <MDEditor.Markdown source={md} /> */}
                 </div>
             </div>
         </div>

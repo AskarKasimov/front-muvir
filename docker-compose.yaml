@@ -1,10 +1,10 @@
 services:
-  ruturfront:
+  muvirfront:
     build:
       context: ./muvir
       args:
         GENERATE_SOURCEMAP: 0
-    container_name: ruturfront
+    container_name: muvirfront
     restart: on-failure
     ports:
       - '3000:3000'
