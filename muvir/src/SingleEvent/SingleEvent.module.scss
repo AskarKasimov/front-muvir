@@ -1,0 +1,59 @@
+.container {
+    width: 100%;
+    max-width: 1600px;
+}
+
+.content {
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+
+    & h1 {
+        font-size: 40px;
+    }
+
+    & p {
+        font-size: 20px;
+    }
+}
+
+.slider {
+    width: 100%;
+}
+
+.fullScreenItem {
+    width: 100%;
+    height: 60svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #FFFFFF;
+        gap: 10px;
+
+        & img {
+            z-index: 500;
+            max-width: 300px;
+        }
+
+        & p {
+            z-index: 500;
+            font-size: 48px;
+        }
+    }
+}

@@ -1,0 +1,288 @@
+:root {
+
+    /* colors */
+    --purple: #7276e1;
+    --orange: rgb(145, 214, 9);
+    --blue-dark: hsl(238, 29%, 16%);
+    --grey-light: hsl(237, 12%, 33%);
+    --blue-mid: hsl(240, 6%, 50%);
+
+    /* fonts */
+    --base-font-size: 1.2rem;
+
+}
+
+.cont {
+    width: 100%;
+    min-height: 110svh;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.attribution {
+    color: #fff;
+    font-size: 11px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.attribution a {
+    color: #fff;
+}
+
+// * {
+//     box-sizing: border-box;
+// }
+
+// html {
+//     font-size: 10px;
+// }
+
+// body {
+//     align-items: center;
+//     display: flex;
+//     flex-direction: column;
+//     font-family: var(--font);
+//     font-weight: 400;
+//     height: 100vh;
+//     justify-content: center;
+//     padding: 0;
+// }
+
+.faq {
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 50px 25px;
+    margin: 150px 5% 5% 5%;
+    min-width: 320px;
+    max-width: 320px;
+}
+
+.faq__logo {
+    background: url('https://bobmatyas.github.io/fm-faq-accordion/images/bg-pattern-mobile.svg') center bottom no-repeat;
+    background-color: transparent;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 0;
+    margin-top: -157px;
+}
+
+.faq__logo__image {
+    margin-left: -13px;
+    margin-bottom: 13px;
+}
+
+.faq__heading {
+    color: var(--blue-dark);
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.faq__detail {
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    margin: 20px 0 0 0;
+    padding: 5px 0 20px 0;
+}
+
+.faq__summary:hover,
+.faq__summary:active {
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.faq__detail[open]>.faq__summary {
+    font-weight: 700;
+}
+
+.faq__summary {
+    list-style: none;
+}
+
+.faq__summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq__summary {
+    display: block;
+    padding: 0;
+    position: relative;
+    text-align: right;
+}
+
+
+.faq__summary:after {
+    display: inline-block;
+    content: url("https://bobmatyas.github.io/fm-faq-accordion/images/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    text-align: right;
+    padding-bottom: 20px;
+}
+
+details[open] .faq__summary:after {
+    display: inline-block;
+    width: 18px;
+    height: 10px;
+    content: "";
+    background-image: url("https://bobmatyas.github.io/fm-faq-accordion/images/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    transform: scaleY(-1);
+}
+
+
+.faq__question {
+    left: 0;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    width: 90%;
+}
+
+.faq__question {
+    display: inline-block;
+    margin: 5px 0;
+    text-align: left;
+    width: 90%;
+}
+
+.faq__summary {
+    color: var(--blue-dark);
+    font-size: 1.4rem;
+}
+
+.faq__summary:focus {
+    color: var(--orange);
+    font-weight: bold;
+    outline: none;
+}
+
+.faq__text {
+    color: var(--blue-mid);
+    font-size: var(--base-font-size);
+    line-height: 1.6;
+    margin: 10px 0 0 0;
+}
+
+.hiddenLg {
+    display: block;
+}
+
+.visibleLg {
+    display: none;
+}
+
+.admin_buttons {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn12 {
+    text-align: center;
+    display: inline-block;
+    padding: 15px 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn12:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    background: #000000;
+    left: 45%;
+    height: 2px;
+    bottom: 0;
+    transition: all .3s;
+    opacity: 0.7;
+}
+
+.red:before {
+    background: #ff0000;
+}
+
+.green:before {
+    background: #00ff00;
+}
+
+.yellow:before {
+    background: #f2ff00;
+}
+
+.btn12:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+
+@media (min-width: 900px) {
+    .faq {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        // min-width: 900px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .faq__logo__holder {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .faq__holder {
+        margin: 0 50px;
+        padding: 70px 0;
+        max-width: 100%;
+        width: 100%;
+        min-height: 100svh;
+    }
+
+    .faq__logo {
+        display: flex;
+        align-items: center;
+        background-image: url(https://bobmatyas.github.io/fm-faq-accordion/images/illustration-woman-online-desktop.svg), url(https://bobmatyas.github.io/fm-faq-accordion/images/bg-pattern-desktop.svg);
+        background-position: -75px center, -571px -270px;
+        background-size: 100%, 200%;
+        height: 100%;
+        min-width: 300px;
+        margin: 0;
+        padding: 0;
+        width: 525px;
+        max-width: 500px;
+        position: relative;
+    }
+
+    .faq__heading {
+        text-align: left;
+    }
+
+    .hiddenLg {
+        display: none;
+    }
+
+    .visibleLg {
+        display: block;
+        position: absolute;
+        margin-top: 120px;
+        left: -80px;
+    }
+
+    .faq__text {
+        margin: 0 0 10px 0;
+    }
+
+    .faq__detail {
+        margin: 10px 0 0 0 0;
+        padding: 0;
+    }
+}

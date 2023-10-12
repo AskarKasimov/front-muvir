@@ -11,7 +11,7 @@ const Redirect = (props: { path: string }) => {
 }
 
 const AdminPage = () => {
-    const isAdmin = false;
+    const isAdmin = true;
     return (
         <>
             {

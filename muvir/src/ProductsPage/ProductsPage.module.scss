@@ -1,0 +1,46 @@
+.content {
+    width: 100%;
+    max-width: 1600px;
+    background-color: #FFFFFF;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    & h1 {
+        font-size: 48px;
+    }
+
+    & form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.news {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    flex-direction: row;
+    width: 100%;
+}
+
+.search {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: #FFF;
+    padding: 8px 20px 8px 20px;
+    font-size: 20px;
+
+    &::placeholder {
+        font-size: 20px;
+        color: #ABABAB;
+    }
+}

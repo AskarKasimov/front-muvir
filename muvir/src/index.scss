@@ -5,6 +5,14 @@
     font-weight: 400;
 }
 
+.wmde-markdown-color  * {
+    font-size: 24px !important;
+}
+
+.w-md-editor-show-live  * {
+    font-size: 16px !important;
+}
+
 *,
 *:before,
 *:after {
@@ -47,32 +55,164 @@ a {
     border-radius: 35px;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    width: clamp(20rem, calc(20rem + 2vw), 22rem);
-    overflow: hidden;
-    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
-    border-radius: 1em;
-    background: #FFFFFF;
-    // background: linear-gradient(to right, #FFFFFF, rgb(145, 214, 9));
 
-    &:hover {
-        box-shadow: 0 .1rem 1rem rgba(145, 214, 9, .4);
+.card {
+    flex: 1 1 auto;
+    width: 30%;
+    max-width: 30%;
+    background-color: #FFF;
+    box-shadow: 0 0 0 1px rgba(#000, .05), 0 20px 50px 0 rgba(#000, .1);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1.25rem;
+    position: relative;
+    transition: .15s ease-in;
+
+    &:hover,
+    &:focus-within {
+        box-shadow: 0 0 0 2px rgb(145, 214, 9), 0 10px 60px 0 rgba(#000, .1);
+        transform: translatey(-5px);
     }
 }
 
-.card__body {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
+.card-image {
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
 }
 
-.card__body h4 {
-    font-size: 1.5rem;
-    text-transform: capitalize;
+.card-header {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        font-weight: 600;
+        font-size: 1.375rem;
+        line-height: 1.25;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: inherit;
+        will-change: transform;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+
 }
+
+.card-footer {
+    margin-top: 1.25rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    color: #787878;
+
+    svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+        margin-right: .25em;
+    }
+}
+
+.article-card {
+    flex: 1 1 auto;
+    width: 30%;
+    max-width: 30%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 300ms;
+}
+
+.article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.article-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.article-card .content {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    padding: 30px 20px 20px 20px;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.article-card .date,
+.article-card .title {
+    margin: 0;
+}
+
+.article-card .date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+.article-card .title {
+    font-size: 17px;
+    color: #fff;
+}
+
+
+// .card {
+//     display: flex;
+//     flex-direction: column;
+//     width: clamp(20rem, calc(20rem + 2vw), 22rem);
+//     overflow: hidden;
+//     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+//     border-radius: 1em;
+//     background: #FFFFFF;
+//     // background: linear-gradient(to right, #FFFFFF, rgb(145, 214, 9));
+
+//     &:hover {
+//         box-shadow: 0 .1rem 1rem rgba(145, 214, 9, .4);
+//     }
+// }
+
+// .card__body {
+//     padding: 1rem;
+//     display: flex;
+//     flex-direction: column;
+//     gap: .5rem;
+// }
+
+// .card__body h4 {
+//     font-size: 1.5rem;
+//     text-transform: capitalize;
+// }
 
 .navbar {
     width: 100%;
@@ -148,6 +288,16 @@ a {
 /* ......../ media query /.......... */
 
 @media (max-width: 1400px) {
+    .article-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .menu-items {
         color: #000000;
         justify-content: flex-start;

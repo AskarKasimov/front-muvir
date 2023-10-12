@@ -13,6 +13,13 @@
     & h1 {
         font-size: 48px;
     }
+
+    & form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .news {
@@ -20,9 +27,12 @@
     flex-wrap: wrap;
     gap: 50px;
     flex-direction: row;
+    width: 100%;
 }
 
 .search {
+    width: 100%;
+    max-width: 400px;
     border-radius: 20px;
     border: 2px solid #000;
     background: #FFF;

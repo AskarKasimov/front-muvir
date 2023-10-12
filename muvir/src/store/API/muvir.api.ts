@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { } from "./models.api";
+import { IEvent, IGetEvents } from "./models.api";
 
 export const muvirAPI = createApi({
     reducerPath: "API",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://api.rutur.run.place/v1",
+        baseUrl: "http://api.мувыр.рф/v1",
         prepareHeaders: (headers) => {
             let token = "";
             try {
@@ -18,16 +18,23 @@ export const muvirAPI = createApi({
         }
     }),
     endpoints: build => ({
-        // getNews: build.query<INews[], IGetNews>({
-        //     query: (params) => ({
-        //         url: "news",
-        //         method: "GET",
-        //         params: params,
-        //     })
-        // }),
+        getEvents: build.query<IEvent[], IGetEvents>({
+            query: (params) => ({
+                url: "event",
+                method: "GET",
+                params: params,
+            })
+        }),
+        getEventByID: build.query<IEvent, number>({
+            query: (id) => ({
+                url: "event/" + id,
+                method: "GET",
+            })
+        })
     })
 })
 
 export const {
-
+    useGetEventsQuery,
+    useGetEventByIDQuery,
 } = muvirAPI;
